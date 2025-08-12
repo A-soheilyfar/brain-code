@@ -69,3 +69,43 @@ function invert(array) {
    return newArr;
 }
 ```
+---
+
+🔵 4- Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+```bash
+
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+
+```
+Solution 1
+```javascript
+function smash (words) {
+  if (words == false){
+    return ""
+  }else{
+    
+  return words.reduce((accumulator = 0, currentValue)=> (accumulator +" "+ currentValue) )
+  }
+};
+```
+
+Solution 2
+```javascript
+smash = function (words) {
+  return words.join(" ");
+};
+```
+
+Solution 3
+```javascript
+const smash = words => words.join(' ');
+```
+
+Solution 4
+```javascript
+function smash (words) {
+   return words.join(' ').trim();
+};
+```
+
