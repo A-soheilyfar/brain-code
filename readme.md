@@ -71,7 +71,7 @@ function invert(array) {
 ```
 ---
 
-🔵 4- Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+🔵 3- Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
 
 ```bash
 
@@ -109,3 +109,51 @@ function smash (words) {
 };
 ```
 
+---
+
+🔵 4- Write a function mergingElements which adds each element in array1 to the corresponding element of array2 and returns the new array.
+
+```javascript
+function mergingElements(array1, array2){
+  
+  let array3=[]
+	for(let i=0;i<array1.length;i++){
+    array3.push(array1[i] + array2[i])
+    
+  }
+      return array3
+}
+
+console.log(mergingElements([1, 2, 3, 4], [5, 6, 7, 8])); // expected log [6, 8, 10, 12]
+
+```
+
+به کمک map
+```javascript
+function mergingElements(array1, array2) {
+    return array1.map((num, index) => num + array2[index]);
+}
+
+
+```
+
+به کمک متد forEach
+
+```javascript
+function mergingElements(array1, array2) {
+    let result = [];
+    array1.forEach((num, index) => {
+        result.push(num + array2[index]);
+    });
+    return result;
+}
+```
+
+به کمک متد from
+```javascript
+
+function mergingElements(array1, array2) {
+    return Array.from(array1, (num, index) => num + array2[index]);
+}
+
+```
