@@ -157,3 +157,49 @@ function mergingElements(array1, array2) {
 }
 
 ```
+
+
+---
+
+🔵 5- Write a function mergingTripletsAndQuints which takes in two arrays as arguments. This function will return a new array replacing the elements in array1 if they are divisible by 3 or 5. The number should be replaced with the sum of itself added to the element at the corresponding index in array2.
+
+
+```javascript
+
+function mergingTripletsAndQuints(array1, array2) {
+ 
+  let array3 = []
+  for(let i=0;i<array1.length;i++){
+    if(array1[i] % 3 ==0 || array1[i] % 5 == 0 ){
+	      array3.push(array1[i] + array2[i])
+    }else{
+      array3.push(array1[i])
+    }
+  }
+return array3
+}
+
+
+console.log(mergingTripletsAndQuints([1, 2, 3, 4, 5, 15], [1, 3, 6, 7, 8, 9])); // expected log [1, 2, 9, 4, 13, 24]
+
+```
+
+
+```javascript
+function mergingTripletsAndQuints(array1, array2) {
+ 
+  let array3 = []
+  array1.forEach((item,index,array)=>{
+    if(array[index] % 3 ==0 || array[index] % 5 ==0 ){
+     array3.push(array[index] + array2[index])
+    }else{
+       array3.push(array[index])
+    }
+  })
+return array3
+}
+
+
+console.log(mergingTripletsAndQuints([1, 2, 3, 4, 5, 15], [1, 3, 6, 7, 8, 9])); // expected log [1, 2, 9, 4, 13, 24]
+
+```
