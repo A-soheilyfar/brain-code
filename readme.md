@@ -203,3 +203,26 @@ return array3
 console.log(mergingTripletsAndQuints([1, 2, 3, 4, 5, 15], [1, 3, 6, 7, 8, 9])); // expected log [1, 2, 9, 4, 13, 24]
 
 ```
+
+
+---
+
+🔵 6-Using an IF/ELSE statement, write a function closestToTheMark that takes two player inputs as number arguments. The function will return 'Player 1 is closest' or 'Player 2 is closest' depending on which player input is closest to the randomly generated number.
+
+```javascript
+function closestToTheMark(player1, player2){
+  const theMark = Math.floor(Math.random() * 100)
+  console.log(`If theMark is ${theMark}...`);
+  // ADD CODE HERE
+  if(Math.abs(theMark - player1 ) < Math.abs(theMark - player2) ){
+    return 'Player 1 is closest'
+  }else{
+    return('Player 2 is closest')
+  }
+}
+
+// Uncomment the line below to check your work!
+ console.log(closestToTheMark(25, 75));
+```
+
+
