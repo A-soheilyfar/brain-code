@@ -226,37 +226,87 @@ function closestToTheMark(player1, player2){
 ```
 
 
-🔵 7-
+🔵 7- Write a function addingAllTheWeirdStuff which adds the sum of all the odd numbers in array2 to each element under 10 in array1. Similarly, addingAllTheWeirdStuff should also add the sum of all the even numbers in array2 to those elements over 10 in array1.
+
+BONUS: If any element in array2 is greater than 20, add 1 to every element in array1.
 ```javascript
 
-function addingAllTheWeirdStuff(array1, array2){
+function addingAllTheWeirdStuff(array1, array2) {
   // ADD CODE HERE
-  let sumeven = 0
-  let sumodd=0
-for(let i = 0 ; i<array2.length;i++){
-   if(array2[i] % 2 ==0){
-     sumeven+=array2[i]
-   }else{
-     sumodd+=array2[i]
-   }
-}
-  for(let i=0;i<array1.length;i++){
-  if(array2[i]>20){
-    array1.forEach((item,index,arr)=> arr[index] = arr[index]+'1')
-  }
-  else if(array1[i]<10){
-    array1[i] = sumodd + array1[i]
-  }else if(array1[i]>10){
-    array1[i] = sumeven + array1[i]
-  }
+  let sumOdd = 0;
+  let sumEven = 0;
+  //Sum of odd nums and Sum of Even Nums in array2
+  for (let i = 0; i < array2.length; i++) {
+    if (array2[i] % 2 == 0) {
+      sumEven += array2[i];
+    } else {
+      sumOdd = sumOdd + array2[i];
     }
-  return array1
+  }
+
+  // adds the sum of all the odd numbers in array2 each element under 10 in arr1
+  //add the sum of all the even numbers in array2 to those elements over 10 in array1.
+  for (let y = 0; y < array1.length; y++) {
+    if (array1[y] < 10) {
+      array1[y] = sumOdd + array1[y];
+    } else if (array1[y] > 10) {
+      array1[y] = sumEven + array1[y];
+    }
+  }
+
+  //If any element in array2 is greater than 20, add 1 to every element in array1.
+  for (let i = 0;i < array2.length;i++) {
+  	if (array2[i] > 20) {
+       
+  		for (let j = 0; j < array2.length; j++) {
+   		   array1[j] += 1;
+         
+    }
+      break;
+       }
+ 
+  }
+    return array1;
 }
 
 // Uncomment these to check your work!
 console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15], [1, 2, 3, 4, 5])); // expected log [10, 12, 14, 23, 21]
-console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15, 1], [1, 2, 3, 4, 5, 22])); // expected log [11, 13, 15, 46, 44, 11]
+console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15, 1], [1, 29, 3, 4, 5, 22])); // expected log [11, 13, 15, 46, 44, 11]
 
 
+```
+
+```javascript
+
+function addingAllTheWeirdStuff(array1, array2) {
+  // ADD CODE HERE
+  const oddSum = array2
+    .filter((num) => num % 2 !== 0)
+    .reduce((sum, num) => sum + num, 0);
+
+  const evenSum = array2
+    .filter((num) => num % 2 === 0)
+    .reduce((sum, num) => sum + num, 0);
+
+  // Check for elements > 20
+  const hasElementOver20 = array2.some((num) => num > 20);
+
+  // Transform array1 using map
+  return array1.map((num) => {
+    let newNum = num;
+
+    if (num < 10) {
+      newNum += oddSum;
+    } else if (num > 10) {
+      newNum += evenSum;
+    }
+
+    if (hasElementOver20) {
+      newNum += 1;
+    }
+
+    return newNum;
+  });
+}
 ```
 
