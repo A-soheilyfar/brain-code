@@ -226,3 +226,37 @@ function closestToTheMark(player1, player2){
 ```
 
 
+🔵 7-
+```javascript
+
+function addingAllTheWeirdStuff(array1, array2){
+  // ADD CODE HERE
+  let sumeven = 0
+  let sumodd=0
+for(let i = 0 ; i<array2.length;i++){
+   if(array2[i] % 2 ==0){
+     sumeven+=array2[i]
+   }else{
+     sumodd+=array2[i]
+   }
+}
+  for(let i=0;i<array1.length;i++){
+  if(array2[i]>20){
+    array1.forEach((item,index,arr)=> arr[index] = arr[index]+'1')
+  }
+  else if(array1[i]<10){
+    array1[i] = sumodd + array1[i]
+  }else if(array1[i]>10){
+    array1[i] = sumeven + array1[i]
+  }
+    }
+  return array1
+}
+
+// Uncomment these to check your work!
+console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15], [1, 2, 3, 4, 5])); // expected log [10, 12, 14, 23, 21]
+console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15, 1], [1, 2, 3, 4, 5, 22])); // expected log [11, 13, 15, 46, 44, 11]
+
+
+```
+
