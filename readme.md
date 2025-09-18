@@ -310,3 +310,43 @@ function addingAllTheWeirdStuff(array1, array2) {
 }
 ```
 
+8-
+
+
+```javascript
+function disemvowel(string) {
+  // ADD CODE HERE
+  let newstring = "";
+  for (let item of string) {
+    if (
+      item !== "a" &&
+      item !== "A" &&
+      item !== "e" &&
+      item !== "E" &&
+      item !== "i" &&
+      item !== "I" &&
+      item !== "o" &&
+      item !== "O" &&
+      item !== "u" &&
+      item !== "U" 
+    )
+      newstring += item;
+  }
+  return(newstring);
+}
+```
+
+```javascript
+function disemvowel(string) {
+  // ADD CODE HERE
+  let newstring = "";
+  for (let item of string) {
+ 		if (!["a", "e", "i", "o", "u","A","E","I","O","U"].includes(item)) {
+      newstring += item;
+    }
+  
+}
+  return(newstring);
+}
+
+```
