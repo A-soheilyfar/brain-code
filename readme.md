@@ -350,7 +350,7 @@ function disemvowel(string) {
 
 ```
 
-9-Create a function addWaldo that accepts an object with keys being first names and values being last names. For example addWaldo({'Luke': 'Skywalker', 'Harley': 'Quinn', 'Ryan': 'Reynolds'}) should add the key 'Waldo' with the value 'unknown' to the object and return the mutated object.
+🔵 9-Create a function addWaldo that accepts an object with keys being first names and values being last names. For example addWaldo({'Luke': 'Skywalker', 'Harley': 'Quinn', 'Ryan': 'Reynolds'}) should add the key 'Waldo' with the value 'unknown' to the object and return the mutated object.
 
 ```javascript
 
@@ -373,5 +373,83 @@ const addWaldo = (object)=>{return Object.assign(object , {"Waldo":"unknown"})}
 // Uncomment these to check your work!
 const siliconValley = {'Richard': 'Hendricks', 'Erlich': 'Bachman', 'Bertram': 'Gilfoyle'}
 console.log(addWaldo(siliconValley)) // should log:{ Richard: 'Hendricks', Erlich: 'Bachman', Bertram: 'Gilfoyle', Waldo: 'unknown' }
+
+```
+
+
+🔵 10-Create a function findWaldo that accepts an object and returns the value associated with the key 'Waldo'. If the key 'Waldo' is not found, the function should return 'Where's Waldo?'
+
+```javascript
+// ADD CODE HERE
+let findWaldo = (object)=>{
+  if(object.hasOwnProperty("Waldo")){
+    return object["Waldo"]
+  } else{
+    return 'Where\'s Waldo?'
+  }
+}
+// Uncomment these to check your work!
+const DC = {'Bruce': 'Wayne', 'Harley': 'Quinn'}
+const supernatural = {'Sam': 'Winchester', 'Dean': 'Winchester', 'Waldo': 'unknown'}
+console.log(findWaldo(DC)) // should log: 'Where's Waldo?'
+console.log(findWaldo(supernatural)) // should log: 'unknown'
+
+```
+
+🔵 11-Write a function arrayBuilder that takes in a count object and returns an array filled with the appropriate numbers of elements. The order of the elements in the array does not matter, but repeated elements should be grouped.
+
+```javascript
+function arrayBuilder(obj) {
+  // ADD CODE HERE
+  let resArr = []
+  let repeatCount = 0
+  
+  for (let keys in obj) {
+    repeatCount = obj[keys]   // مثلاً اگر obj = {a: 3, b: 2} باشه
+                              // در اولین دور repeatCount = 3 میشه
+    
+    while (repeatCount > 0) { // تا وقتی که تعداد باقی مونده بیشتر از صفره
+      resArr.push(keys)       // کلید رو اضافه کن
+      repeatCount -= 1        // یکی از تعداد کم کن
+    }
+  }
+  
+  return resArr
+}
+
+```
+
+
+
+```javascript
+function arrayBuilder(obj) {
+  let resArr = []
+  for (let [key, count] of Object.entries(obj)) {
+    for (let i = 0; i < count; i++) {
+      resArr.push(key)
+    }
+  }
+  return resArr
+}
+
+
+```
+
+```javascrit
+function arrayBuilder(obj) {
+  return Object.entries(obj)
+    .map(([key, count]) => Array(count).fill(key)) // مثلاً [["a","a"], ["b","b","b"]]
+    .flat() // همه رو تبدیل می‌کنه به یه آرایه یک‌بعدی
+}
+
+```
+
+
+```javascript
+function arrayBuilder(obj) {
+  return Object.entries(obj).reduce((acc, [key, count]) => {
+    return acc.concat(Array(count).fill(key))
+  }, [])
+}
 
 ```
