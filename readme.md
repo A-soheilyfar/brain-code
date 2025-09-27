@@ -453,3 +453,30 @@ function arrayBuilder(obj) {
 }
 
 ```
+
+🔵 12- Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+
+```bash
+
+employed | vacation 
+true     | true     => false
+true     | false    => true
+false    | true     => false
+false    | false    => false
+```
+
+```javascript
+function setAlarm(employed, vacation){
+if(employed && vacation){
+  return false
+}else if(vacation){
+  return false
+}else if(!employed && !vacation){
+  return false
+}
+  else{
+  return true
+}
+}
+
+```
