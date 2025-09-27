@@ -224,6 +224,7 @@ function closestToTheMark(player1, player2){
 // Uncomment the line below to check your work!
  console.log(closestToTheMark(25, 75));
 ```
+---
 
 
 🔵 7- Write a function addingAllTheWeirdStuff which adds the sum of all the odd numbers in array2 to each element under 10 in array1. Similarly, addingAllTheWeirdStuff should also add the sum of all the even numbers in array2 to those elements over 10 in array1.
@@ -309,6 +310,7 @@ function addingAllTheWeirdStuff(array1, array2) {
   });
 }
 ```
+---
 
 🔵 8- Write a function disemvowel that takes in a string and returns a new string with all vowels removed.
 
@@ -349,6 +351,7 @@ function disemvowel(string) {
 }
 
 ```
+---
 
 🔵 9-Create a function addWaldo that accepts an object with keys being first names and values being last names. For example addWaldo({'Luke': 'Skywalker', 'Harley': 'Quinn', 'Ryan': 'Reynolds'}) should add the key 'Waldo' with the value 'unknown' to the object and return the mutated object.
 
@@ -375,6 +378,7 @@ const siliconValley = {'Richard': 'Hendricks', 'Erlich': 'Bachman', 'Bertram': '
 console.log(addWaldo(siliconValley)) // should log:{ Richard: 'Hendricks', Erlich: 'Bachman', Bertram: 'Gilfoyle', Waldo: 'unknown' }
 
 ```
+---
 
 
 🔵 10-Create a function findWaldo that accepts an object and returns the value associated with the key 'Waldo'. If the key 'Waldo' is not found, the function should return 'Where's Waldo?'
@@ -395,6 +399,7 @@ console.log(findWaldo(DC)) // should log: 'Where's Waldo?'
 console.log(findWaldo(supernatural)) // should log: 'unknown'
 
 ```
+---
 
 🔵 11-Write a function arrayBuilder that takes in a count object and returns an array filled with the appropriate numbers of elements. The order of the elements in the array does not matter, but repeated elements should be grouped.
 
@@ -453,6 +458,7 @@ function arrayBuilder(obj) {
 }
 
 ```
+---
 
 🔵 12- Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
 
