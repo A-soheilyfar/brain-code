@@ -310,8 +310,7 @@ function addingAllTheWeirdStuff(array1, array2) {
 }
 ```
 
-8-
-
+8- Write a function disemvowel that takes in a string and returns a new string with all vowels removed.
 
 ```javascript
 function disemvowel(string) {
