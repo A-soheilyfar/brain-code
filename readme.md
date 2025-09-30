@@ -437,10 +437,9 @@ function arrayBuilder(obj) {
   return resArr
 }
 
-
 ```
 
-```javascrit
+```javascript
 function arrayBuilder(obj) {
   return Object.entries(obj)
     .map(([key, count]) => Array(count).fill(key)) // مثلاً [["a","a"], ["b","b","b"]]
